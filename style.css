@@ -1,0 +1,237 @@
+/* 页面外观写在 CSS；花朵的外观写在 sketch.js。 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f4ee;
+  color: #183b3b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 44px 0 24px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+}
+
+.eyebrow span {
+  border-left: 1px solid #b5c1b6;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 8vw, 74px);
+  font-weight: normal;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.title-dot {
+  color: #a85073;
+}
+
+.introduction {
+  margin: 15px 0 32px;
+  color: #4b635a;
+  line-height: 1.6;
+}
+
+.garden-section {
+  overflow: hidden;
+  border: 1px solid #b9c5ba;
+  border-radius: 16px;
+}
+
+.garden-heading,
+.garden-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  background: #ebece2;
+}
+
+h2,
+.garden-heading p,
+.garden-bottom p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+#flower-count {
+  color: #4b635a;
+  font-size: 12px;
+}
+
+#canvas-holder {
+  width: 100%;
+  min-height: 420px;
+  background: #102f33;
+}
+
+#canvas-holder canvas {
+  display: block;
+  max-width: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.garden-bottom {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.garden-bottom p {
+  color: #4b635a;
+  font-size: 12px;
+}
+
+.colour-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.colour-dots i {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #66776b;
+  border-radius: 50%;
+  background: #f3bcd1;
+}
+
+.colour-dots i:nth-child(2) {
+  background: #cfc2f0;
+}
+
+.colour-dots i:nth-child(3) {
+  background: #f4d99c;
+}
+
+.controls {
+  margin-top: 22px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid #648075;
+  border-radius: 7px;
+  background: #f7f4ee;
+  color: #183b3b;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e2e8db;
+}
+
+.primary-button {
+  border-color: #183b3b;
+  background: #183b3b;
+  color: #fffaf1;
+}
+
+.primary-button:hover {
+  background: #28534b;
+}
+
+.quiet-button {
+  border-color: #aab5a7;
+}
+
+button:focus-visible {
+  outline: 3px solid #a85073;
+  outline-offset: 4px;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.status,
+.track-info {
+  margin: 13px 0 0;
+  color: #4b635a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.track-info {
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-top: 28px;
+  border-top: 1px solid #c4cdbf;
+  padding-top: 16px;
+  color: #4b635a;
+  font-size: 11px;
+}
+
+.page-footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .page {
+    width: calc(100% - 28px);
+    padding-top: 28px;
+  }
+
+  .eyebrow {
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .eyebrow span {
+    padding-left: 10px;
+  }
+
+  .garden-heading,
+  .garden-bottom {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  button {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

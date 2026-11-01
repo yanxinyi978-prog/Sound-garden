@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plant a digital flower garden and watch its petals open and close with music.">
+  <title>Sound Garden — 音の庭</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">AN INTERACTIVE MUSIC GARDEN <span>OTO NO NIWA</span></p>
+      <h1>Sound Garden<span class="title-dot">.</span></h1>
+      <p class="introduction">A small place to plant, listen and watch things bloom.</p>
+    </header>
+
+    <section class="garden-section" aria-labelledby="garden-heading">
+      <div class="garden-heading">
+        <h2 id="garden-heading">Your little garden</h2>
+        <p id="flower-count" aria-live="polite">0 flowers</p>
+      </div>
+
+      <div id="canvas-holder" aria-describedby="garden-help">
+        <noscript>Please enable JavaScript to plant your garden.</noscript>
+      </div>
+
+      <div class="garden-bottom">
+        <p id="garden-help">Click or tap the garden to plant a flower.</p>
+        <span class="colour-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Garden and music controls">
+      <div class="button-group">
+     
+        <button id="music-button" class="primary-button" type="button" onclick="toggleMusic()" aria-pressed="false" disabled>Play music</button>
+        <button id="plant-button" type="button" onclick="plantRandomFlower()" disabled>Plant a flower</button>
+        <button id="clear-button" class="quiet-button" type="button" onclick="clearGarden()" disabled>Clear garden</button>
+      </div>
+
+      <p id="music-status" class="status" role="status">Preparing the garden and music…</p>
+      <p class="track-info">Music: <span id="track-title">Instrumental test track</span></p>
+    </section>
+
+    <footer class="page-footer">
+      <p>You choose where it grows. The music decides how it blooms.</p>
+      <p>Four petals. Endless possibilities.</p>
+    </footer>
+  </main>
+
+  <script src="lib/p5.min.js"></script>
+  <script src="lib/p5.sound.min.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
